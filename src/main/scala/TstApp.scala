@@ -1,4 +1,11 @@
-import com.tst.{CabinCode, CabinPrice, PricingEngine, Promotion, PromotionEngine, Rate, RateCode, RateGroup}
+import com.tst.CabinCode
+import com.tst.CabinPrice
+import com.tst.PricingEngine
+import com.tst.Promotion
+import com.tst.PromotionEngine
+import com.tst.Rate
+import com.tst.RateCode
+import com.tst.RateGroup
 
 object TstApp:
 
@@ -46,8 +53,6 @@ object TstApp:
 
   }
 
-
-
   private def initPromotion(): Unit = {
     val p1 = "P1"
     val p2 = "P2"
@@ -61,7 +66,7 @@ object TstApp:
     val promotion4 = Promotion(p4, Seq(p2))
     val promotion5 = Promotion(p5, Seq(p2))
 
-    val input = Seq(promotion1, promotion2, promotion3, promotion4, promotion5)
+    val input                = Seq(promotion1, promotion2, promotion3, promotion4, promotion5)
     val allValidCombinations = PromotionEngine.allCombinablePromotions(input)
     println(s"All Combinations:")
     println(s"${allValidCombinations.mkString("\n")}")

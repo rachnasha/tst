@@ -7,7 +7,8 @@ import org.scalatest.matchers.should.Matchers.*
 
 class PricingEngineSpec extends AnyFlatSpec:
 
-  "Pricing Engine" should "find best prices for a simple input" in {
+  "Pricing Engine" should "find best prices for a given input" in {
+
     val cabinCode1 = CabinCode("C1")
 
     val RateCode1 = RateCode("R1")
@@ -30,7 +31,7 @@ class PricingEngineSpec extends AnyFlatSpec:
     val priceStudent1 = CabinPrice(cabinCode1, RateCode3, 150)
     val priceStudent2 = CabinPrice(cabinCode1, RateCode4, 750)
 
-    val inputRates = Seq(RatesKids1, RatesKids2, RatesStudent1, RatesStudent2)
+    val inputRates  = Seq(RatesKids1, RatesKids2, RatesStudent1, RatesStudent2)
     val inputPrices = Seq(priceKids1, priceKids2, priceStudent1, priceStudent2)
 
     val resultBestPrices = PricingEngine.getBestGroupPrices(inputRates, inputPrices)
@@ -40,8 +41,8 @@ class PricingEngineSpec extends AnyFlatSpec:
 
     resultBestPrices should have length 2
     val cp = new Checkpoint()
-    cp{ resultKidsPrice should equal(Seq(50))}
-    cp{ resultStudentPrice should equal(Seq(150)) }
+    cp { resultKidsPrice should equal(Seq(50)) }
+    cp { resultStudentPrice should equal(Seq(150)) }
 
     cp.reportAll()
   }

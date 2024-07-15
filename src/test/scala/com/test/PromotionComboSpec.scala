@@ -8,7 +8,7 @@ import org.scalatest.matchers.should.Matchers.*
 
 class PromotionComboSpec extends AnyFlatSpec {
 
-  "Promotion Combo" should "canAdd works for empty and nonEmpty combos" in {
+  "Promotion Combo" should "work for empty and nonEmpty combos" in {
     val promoCode1 = "P1"
     val promoCode2 = "P2"
     val promoCode3 = "P3"
@@ -30,10 +30,10 @@ class PromotionComboSpec extends AnyFlatSpec {
     val cp = new Checkpoint()
 
     cp { addPromo2ToCombo1 shouldBe false }
-    cp {addPromo3ToCombo1 shouldBe true }
-    cp {addPromo1ToCombo2 shouldBe false }
-    cp {addPromo3ToCombo2 shouldBe false }
-    cp {addPromo3ToEmptyCombo shouldBe true }
+    cp { addPromo3ToCombo1 shouldBe true }
+    cp { addPromo1ToCombo2 shouldBe false }
+    cp { addPromo3ToCombo2 shouldBe false }
+    cp { addPromo3ToEmptyCombo shouldBe true }
 
     cp.reportAll()
   }
@@ -139,8 +139,8 @@ class PromotionComboSpec extends AnyFlatSpec {
     val combos  = Seq(promoCombo1, promoCombo3)
     val result1 = PromotionCombo.containsFull(combos, promoCombo2)
     val result2 = PromotionCombo.containsFull(combos, promoCombo4)
-    val cp = new Checkpoint()
-    cp{ result1 should be(true) }
+    val cp      = new Checkpoint()
+    cp { result1 should be(true) }
     cp { result2 should be(true) }
     cp.reportAll()
   }
@@ -160,9 +160,9 @@ class PromotionComboSpec extends AnyFlatSpec {
     val combos  = Seq(promoCombo1, promoCombo2)
     val result1 = PromotionCombo.containsFull(combos, promoCombo3)
     val result2 = PromotionCombo.containsFull(combos, promoCombo4)
-    val cp = new Checkpoint()
-    cp {result1 should be(true)}
-    cp{ result2 should be(false)}
+    val cp      = new Checkpoint()
+    cp { result1 should be(true) }
+    cp { result2 should be(false) }
     cp.reportAll()
   }
 

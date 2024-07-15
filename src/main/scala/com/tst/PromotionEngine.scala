@@ -24,7 +24,7 @@ object PromotionEngine:
 
   def allCombinablePromotions(allPromotions: Seq[Promotion]): Seq[PromotionCombo] =
     val combosByPromotionCode = findCombinables(allPromotions)
-    val allCombos    = combosByPromotionCode.values.flatten.toSeq
+    val allCombos             = combosByPromotionCode.values.flatten.toSeq
     PromotionCombo.distinct(allCombos)
 
   def combinablePromotions(promotionCode: String, allPromotions: Seq[Promotion]): Seq[PromotionCombo] =

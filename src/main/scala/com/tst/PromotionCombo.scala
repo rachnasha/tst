@@ -42,7 +42,7 @@ object PromotionCombo:
 
   def containsFull(combos: Seq[PromotionCombo], combo: PromotionCombo): Boolean =
     combo.promotionCodes.nonEmpty &&
-    combos.exists(aCombo => combo.promotionCodes.forall(aCombo.promotionCodes.contains))
+      combos.exists(aCombo => combo.promotionCodes.forall(aCombo.promotionCodes.contains))
 
   def distinct(allCombos: Seq[PromotionCombo]): Seq[PromotionCombo] =
     if (allCombos.isEmpty) allCombos
