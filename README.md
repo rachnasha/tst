@@ -1,8 +1,8 @@
 ## tst-exercises
 
--[setup](#setup)
+[setup](#setup)
 
--[usage](#Usage)
+[usage](#Usage)
 
 
 ## setup
