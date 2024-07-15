@@ -7,7 +7,7 @@
 
 ## setup
 
-This application uses Scala 3.4.2 and sbt to build it module. To work with it locally 
+This application uses Scala 3.4.2 and sbt to build. To work with it locally 
 
 1. Install sbt
 
